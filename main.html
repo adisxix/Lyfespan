@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-[url('bg.jpg')] bg-contain flex items-center justify-center font-['Rokkitt',serif] p-4">
+
+<div class="w-[min(92vw,680px)] min-h-[430px] flex flex-col rounded-2xl border-4 border-black shadow-[0_0_25px_#454955] p-4 md:p-5 text-black font-bold">
+
+<h1 id="stepTitle" class="text-lg md:text-4xl font-bold text-[#0D0A0B] mb-10 text-center">Fill up the details</h1>
+
+<div class="mt-2 flex-1">
+<section id="step-1" data-step class="space-y-4">
+<div class="grid gap-4 md:grid-cols-2">
+<input id="firstName" type="text" placeholder="First Name" required pattern="[A-Za-z ]+" title="Only letters and spaces are allowed." class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<input id="lastName" type="text" placeholder="Last Name" required pattern="[A-Za-z ]+" title="Only letters and spaces are allowed." class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+</div>
+
+<div class="grid gap-4 md:grid-cols-2">
+<input id="dob" type="date" required class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<select id="gender" required class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<option value="" disabled selected>Select Gender</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+<option value="prefer-not-to-say">Prefer not to say</option>
+</select>
+</div>
+
+<div class="grid gap-4 md:grid-cols-2">
+<input id="city" type="text" placeholder="City" required pattern="[A-Za-z ]+" title="Only letters and spaces are allowed." class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<input id="country" type="text" placeholder="Country" required pattern="[A-Za-z ]+" title="Only letters and spaces are allowed." class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+</div>
+</section>
+
+<section id="step-2" data-step class="h-full" style="display: none;">
+<div class="space-y-5">
+
+<div class="grid gap-4 md:grid-cols-2">
+<div class="space-y-2">
+<label for="heightValue" class="block text-xl text-black">Your Height</label>
+<div class="grid grid-cols-[1fr_auto] gap-2">
+<input id="heightValue" type="number" min="1" step="0.1" required placeholder="Enter Height" class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<select id="heightUnit" required class="rounded-lg border-2 border-black bg-transparent px-3 py-3 text-[16px] text-black font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<option value="" disabled selected>Unit</option>
+<option value="ft-in">ft/in</option>
+<option value="cm">cm</option>
+</select>
+</div>
+</div>
+
+<div class="space-y-2">
+<label for="weightValue" class="block text-xl text-black">Your Weight</label>
+<div class="grid grid-cols-[1fr_auto] gap-2">
+<input id="weightValue" type="number" min="1" step="0.1" required placeholder="Enter Weight" class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<select id="weightUnit" required class="rounded-lg border-2 border-black bg-transparent px-3 py-3 text-[16px] text-black font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+<option value="" disabled selected>Unit</option>
+<option value="kg">kg</option>
+<option value="lb">pound</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="space-y-3">
+<p class="text-xl text-black">Which diet do you follow?</p>
+<div class="grid gap-3 sm:grid-cols-2">
+<input class="peer/veg sr-only" type="radio" id="dietVeg" name="diet" value="veg" required>
+<label for="dietVeg" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/veg:bg-black peer-checked/veg:text-white">Vegetarian</label>
+
+<input class="peer/nonveg sr-only" type="radio" id="dietNonVeg" name="diet" value="non-veg" required>
+<label for="dietNonVeg" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/nonveg:bg-black peer-checked/nonveg:text-white">Non Vegetarian</label>
+
+<input class="peer/eggetarian sr-only" type="radio" id="dietEggetarian" name="diet" value="eggetarian" required>
+<label for="dietEggetarian" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/eggetarian:bg-black peer-checked/eggetarian:text-white">Eggetarian</label>
+
+<input class="peer/vegan sr-only" type="radio" id="dietVegan" name="diet" value="vegan" required>
+<label for="dietVegan" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/vegan:bg-black peer-checked/vegan:text-white">Vegan</label>
+ </div>
+</div>
+</div>
+</section>
+<section id="step-3" data-step class="h-full" style="display: none;">
+<div class="space-y-5">
+
+<div class="space-y-3">
+<p class="text-xl text-black">How many meals do you eat per day?</p>
+<div class="flex flex-wrap gap-3">
+<input class="peer/meal2 sr-only" type="radio" id="mealTwo" name="mealsPerDay" value="2" required>
+<label for="mealTwo" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/meal2:bg-black peer-checked/meal2:text-white">2</label>
+
+<input class="peer/meal3 sr-only" type="radio" id="mealThree" name="mealsPerDay" value="3" required>
+<label for="mealThree" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/meal3:bg-black peer-checked/meal3:text-white">3</label>
+
+<input class="peer/mealCustom sr-only" type="radio" id="mealCustomOption" name="mealsPerDay" value="custom">
+<label for="mealCustomOption" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/mealCustom:bg-black peer-checked/mealCustom:text-white">Custom</label>
+
+<div id="mealCustomWrapper" class="items-center gap-3" style="display: none;">
+<input id="mealCustom" type="number" min="1" max="10" placeholder="Enter number" class="w-40 rounded-lg border-2 border-black bg-transparent px-4 py-2 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black">
+</div>
+</div>
+</div>
+
+<div class="space-y-3">
+<p class="text-xl text-black">How often do you workout or exercise?</p>
+<div class="flex flex-wrap gap-3">
+<input class="peer/weekly sr-only" type="radio" id="workoutWeekly" name="workoutFrequency" value="weekly" required>
+<label for="workoutWeekly" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/weekly:bg-black peer-checked/weekly:text-white">Weekly</label>
+
+<input class="peer/sometimes sr-only" type="radio" id="workoutSometimes" name="workoutFrequency" value="sometimes" required>
+<label for="workoutSometimes" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/sometimes:bg-black peer-checked/sometimes:text-white">Sometimes</label>
+
+<input class="peer/rarely sr-only" type="radio" id="workoutRarely" name="workoutFrequency" value="rarely" required>
+<label for="workoutRarely" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/rarely:bg-black peer-checked/rarely:text-white">Rarely</label>
+</div>
+</div>
+
+<div class="space-y-3">
+<p class="text-xl text-black">Is your lifestyle healthy according to you?</p>
+<div class="flex flex-wrap gap-3">
+<input class="peer/yes sr-only" type="radio" id="healthyYes" name="healthyLifestyle" value="yes" required>
+<label for="healthyYes" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/yes:bg-black peer-checked/yes:text-white">Yes</label>
+
+<input class="peer/no sr-only" type="radio" id="healthyNo" name="healthyLifestyle" value="no" required>
+<label for="healthyNo" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/no:bg-black peer-checked/no:text-white">No</label>
+
+<input class="peer/maybe sr-only" type="radio" id="healthyMaybe" name="healthyLifestyle" value="maybe" required>
+<label for="healthyMaybe" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/maybe:bg-black peer-checked/maybe:text-white">Maybe</label>
+</div>
+</div>
+</section>
+
+<section id="step-4" data-step class="h-full" style="display: none;">
+<div class="space-y-5">
+
+<div class="space-y-3">
+<p class="text-xl text-black">Are you suffering from any disease, disability or any other symptoms?</p>
+<div class="flex flex-wrap gap-3">
+<input class="peer/diseaseyes sr-only" type="radio" id="diseaseYes" name="diseaseStatus" value="yes" required>
+<label for="diseaseYes" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/diseaseyes:bg-black peer-checked/diseaseyes:text-white">Yes</label>
+
+<input class="peer/diseaseno sr-only" type="radio" id="diseaseNo" name="diseaseStatus" value="no" required>
+<label for="diseaseNo" class="cursor-pointer rounded-lg border-2 border-black px-4 py-2 text-center text-black font-bold transition-colors duration-200 hover:bg-[#454955] hover:text-white peer-checked/diseaseno:bg-black peer-checked/diseaseno:text-white">No</label>
+</div>
+</div>
+
+<div id="diseaseInputContainer" class="space-y-2" style="display: none;">
+<label for="diseaseInput" class="block text-xl text-black">Please specify your condition</label>
+<textarea id="diseaseInput" placeholder="Enter disease, disability or symptom" rows="4" class="w-full rounded-lg border-2 border-black bg-transparent px-4 py-3 text-[16px] text-black font-bold placeholder:text-black placeholder:font-bold transition-colors duration-200 hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-black resize-vertical"></textarea>
+</div>
+
+</div>
+</section>
+</div>
+
+<div class="mt-5 flex items-center justify-between">
+<button id="prevButton" type="button" class="rounded-full border-2 border-black px-4 py-1.5 text-xl font-bold text-black transition-colors hover:bg-[#0D0A0B] active:bg-[#0D0A0B] hover:text-white active:text-white disabled:cursor-not-allowed disabled:opacity-40">←</button>
+<button id="nextButton" type="button" class="rounded-full border-2 border-black px-4 py-1.5 text-xl font-bold text-black transition-colors hover:bg-[#0D0A0B] active:bg-[#0D0A0B] hover:text-white active:text-white">→</button>
+<button id="submitButton" type="button" class="rounded-full border-2 border-black px-6 py-1.5 text-xl font-bold text-black transition-colors hover:bg-[#0D0A0B] active:bg-[#0D0A0B] hover:text-white active:text-white" style="display: none;">Get My Report</button>
+</div>
+
+<div id="loaderOverlay" class="fixed inset-0 z-50 flex items-center justify-center bg-[#F3EFF5]" style="display: none;">
+<div class="w-10 h-10 border-4 border-t-[#72B01D] border-[#0D0A0B] rounded-full animate-spin"></div>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>

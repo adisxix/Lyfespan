@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyfespan</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen bg-[#F3EFF5] flex items-center justify-center font-['Rokkitt',serif]">
+
+<div class="text-center"> 
+<h1 class="text-8xl tracking-wide font-bold text-[#3F7D20]">LYFESPAN</h1>
+<h4 class="text-3xl mt-2 animate-pulse font-bold text-[#72B01D]">Your Clock, Decoded</h4>
+<button id="startButton" type="button" class="text-xl font-bold w-32 h-12 rounded bg-[#0D0A0B] text-[#3F7D20] relative overflow-hidden group z-10 hover:text-[#0D0A0B] duration-1000 mt-6 cursor-pointer">
+<span class="absolute bg-[#72B01D] w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+<span class="absolute bg-[#72B01D] w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+Lyfe Me
+</button>
+
+</div>
+
+<div id="loaderOverlay" class="fixed inset-0 hidden items-center justify-center bg-[#F3EFF5] z-50">
+<div class="w-10 h-10 border-4 border-t-[#72B01D] border-[#0D0A0B] rounded-full animate-spin"></div>
+</div>
+
+
+
+<script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifespan Report</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+rel="stylesheet">
+</head>
+
+<body class="h-screen overflow-hidden bg-[url('bg2.jpg')] bg-contain font-['Rokkitt',serif] p-4 md:p-6">
+
+<div class="w-full h-full flex flex-col items-center relative">
+<button id="resetButton"
+class="absolute top-0 right-0 md:top-2 md:right-2 bg-white group flex items-center justify-center z-10 [transition:all_0.5s_ease] rounded-[0.375rem] p-[5px] cursor-pointer border border-[#999] outline-none focus-visible:outline-0 shadow-sm hover:shadow-md">
+<svg fill="currentColor" stroke="none" stroke-width="0" viewBox="0 0 24 24"
+xmlns="http://www.w3.org/2000/svg"
+class="text-black w-7 h-7 overflow-visible [transition:transform_.35s_ease] group-hover:[transition-delay:.25s] [&amp;_path]:[transition:transform_.35s_ease] group-hover:rotate-45">
+<path class="group-hover:[transform:rotate(112.5deg)_translate(-27.2%,-80.2%)]"
+d="m3.45,8.83c-.39,0-.76-.23-.92-.62-.21-.51.03-1.1.54-1.31L14.71,2.08c.51-.21,1.1.03,1.31.54.21.51-.03,1.1-.54,1.31L3.84,8.75c-.13.05-.25.08-.38.08Z">
+</path>
+<path class="group-hover:[transform:rotate(22.5deg)_translate(15.5%,-23%)]"
+d="m2.02,17.13c-.39,0-.76-.23-.92-.62-.21-.51.03-1.1.54-1.31L21.6,6.94c.51-.21,1.1.03,1.31.54.21.51-.03,1.1-.54,1.31L2.4,17.06c-.13.05-.25.08-.38.08Z">
+</path>
+<path class="group-hover:[transform:rotate(112.5deg)_translate(-15%,-149.5%)]"
+d="m8.91,21.99c-.39,0-.76-.23-.92-.62-.21-.51.03-1.1.54-1.31l11.64-4.82c.51-.21,1.1.03,1.31.54.21.51-.03,1.1-.54,1.31l-11.64,4.82c-.13.05-.25.08-.38.08Z">
+</path>
+</svg>
+</button>
+
+<h1 id="reportHeading" class="text-4xl font-bold text-[#3F7D20] mb-5 text-center mt-12 md:mt-0">Here is your
+Lyfespan Report,
+<span id="firstName">User</span>
+</h1>
+
+<div class="w-full max-w-6xl px-2 md:px-4 flex-1 min-h-0">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 h-full">
+
+<div
+class="rounded-2xl border-4 border-black shadow-lg shadow-gray-400 p-4 md:p-5 bg-white h-full overflow-hidden">
+<h2 class="text-3xl font-bold text-black mb-6">Estimated Lifespan</h2>
+
+<div class="space-y-2 mb-4">
+<p class="text-[20px] text-black font-bold">Your BMI</p>
+<p id="bmiValue" class="text-lg text-[#3F7D20] font-bold">Calculating...</p>
+</div>
+
+<div class="space-y-2 mb-4">
+<p class="text-[20px] text-black font-bold">Health Score</p>
+<p id="healthScore" class="text-lg text-[#3F7D20] font-bold">0 / 5</p>
+</div>
+
+<div class="space-y-2 mb-4 p-3 rounded-lg bg-gray-100">
+<p class="text-[20px] text-black font-bold">Time You've Lived</p>
+<div id="liveCounter" class="text-sm text-black space-y-1">
+<p id="liveCounterShort" class="font-bold">Loading...</p>
+<p id="liveCounterLong" class="text-xs">Loading...</p>
+</div>
+</div>
+
+<div class="space-y-2 mt-6 p-3 rounded-lg bg-[#3F7D20] text-white">
+<p class="text-[20px] font-bold">Years You Will Live</p>
+<p id="estimatedYearsToLive" class="text-lg font-bold">Based on AI analysis</p>
+</div>
+</div>
+
+<div
+class="rounded-2xl border-4 border-black shadow-lg shadow-gray-400 p-4 md:p-5 bg-white h-full overflow-hidden">
+<h2 class="text-3xl font-bold text-black mb-4">Lifestyle Suggestions</h2>
+<div class="space-y-1">
+<div id="lifestyleContent" class="text-[#3F7D20] text-lg leading-snug space-y-1">
+<ol class="list-decimal list-inside space-y-3 text-base md:text-lg font-bold leading-snug">
+<li id="suggestion-1" class="break-words">Loading suggestion...</li>
+<li id="suggestion-2" class="break-words">Loading suggestion...</li>
+<li id="suggestion-3" class="break-words">Loading suggestion...</li>
+<li id="suggestion-4" class="break-words">Loading suggestion...</li>
+<li id="suggestion-5" class="break-words">Loading suggestion...</li>
+</ol>
+</div>
+</div>
+</div>
+<div
+class="rounded-2xl border-4 border-black shadow-lg shadow-gray-400 p-4 md:p-5 bg-white h-full overflow-hidden">
+<h2 class="text-3xl font-bold text-black mb-4">Facts About You</h2>
+<div class="space-y-1">
+<div id="healthDetailsContent" class="text-[#3F7D20] text-lg leading-snug space-y-1">
+<ol class="list-decimal list-inside space-y-3 text-base md:text-lg font-bold leading-snug">
+<li id="fact-1" class="break-words">Loading fact...</li>
+<li id="fact-2" class="break-words">Loading fact...</li>
+<li id="fact-3" class="break-words">Loading fact...</li>
+<li id="fact-4" class="break-words">Loading fact...</li>
+<li id="fact-5" class="break-words">Loading fact...</li>
+</ol>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script type="module" src="report.js"></script>
+</body>
+
+</html>

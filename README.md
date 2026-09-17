@@ -5,7 +5,7 @@ Lyfespan is an AI-powered lifespan prediction app that takes your health, lifest
 # Features
 
 - Multi-step form — name, DOB, country, body stats, diet, activity, habits, health conditions, and self-assessment
-- AI-powered results via Claude API
+- AI-powered results via Gemini API
 - Estimated lifespan + years remaining
 - Health score out of 5
 - Country average life expectancy (male & female)
@@ -17,8 +17,8 @@ Lyfespan is an AI-powered lifespan prediction app that takes your health, lifest
 # Tech Stack
 
 - HTML
-- Tailwind CSS (UI components via CDN)
-- JavaScript (Vanilla)
-- OpenAI API (chatgpt) — AI integration
-- Google Fonts — typography
+- Tailwind CSS 
+- JavaScript 
+- Gemini API
+- Google Fonts 
 - Tailwind CSS UI Verse Library
